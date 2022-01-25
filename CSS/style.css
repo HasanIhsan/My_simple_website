@@ -1,0 +1,896 @@
+/*************   STYLE ADDITIONS   **********************
+*********************************************************/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+html,
+body {
+    display: block;
+   
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+   
+    color: #777;
+    background: orangered;
+}
+
+.container
+{
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+body {
+    /*padding: 50px;*/
+  -webkit-font-smoothing: antialiased;
+    line-height: 50px;
+    font-weight: 600;
+    background: orangered;
+    margin: 0;
+  
+}
+
+ul{
+    padding: 0;
+}
+
+.main-body-wrapper{
+    font-family: 'Raleway', arial;
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    width: 80vw;
+    display:block;
+    margin: auto;
+    background: orangered; 
+}
+
+.maxWidth{    
+    max-width: 1400px;   
+    /*  Adjust width of the example  - in this box as its a demo */
+}
+
+
+/*************   MAIN STYLES   **********************
+*********************************************************/
+
+
+/*  ============  NAV BAR  =============  */
+.navbar-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    background: #fafafa;
+    width: 80vw;
+    max-width: 1400px;
+    z-index: 10;
+    top: 0;
+}
+
+.navbar-main ul{
+    display: flex;
+    margin: 0;
+    height: 50px;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar-main li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: 0.8em;
+    letter-spacing: 0.3em;
+    color: rgb(191, 54, 12);
+    background: #fafafa;
+}
+
+
+/*************   BURGER MENU   **********************
+*********************************************************/
+/*
+Burger menu adapted from Vivek Kumar Bansal (https://codepen.io/vkbansal/pen/QbapGz)
+*/
+
+body.open {
+    overflow: hidden;
+}
+
+body.open:before {
+    visibility: visible;
+    opacity: 1;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    background-color: rgb(255, 38, 0);
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 60vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 11;
+}
+
+.burger {
+    position: fixed;
+    top: 20px;
+}
+
+.burger__button {
+    display: flex;
+    position: relative;
+    background: rgb(0, 121, 107);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+    box-shadow: -20px 27px 55px 0px rgba(0,0,0,0.5);
+}
+
+.burger__button.open {
+    border: 2px solid #ffffff;
+    box-shadow: none;
+}
+
+.burger__button__icon {
+    display: inline-block;
+    position: absolute;
+    background: #fff;
+    margin: 0 auto;
+    width: 20px;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    
+}
+
+.burger__button__icon:before,
+.burger__button__icon:after {
+    content: "";
+    position: absolute;
+    margin: 0 auto;
+    background: #fff;
+    width: 20px;
+    height: 2px;
+    left: 0;
+    right: 0;
+    
+}
+
+.burger__button__icon:before {
+    bottom: 10px;
+}
+
+.burger__button__icon:after {
+    top: 10px;
+}
+
+.burger__button.open .burger__button__icon {
+    background: transparent;
+}
+
+.burger__button.open .burger__button__icon:before,
+.burger__button.open .burger__button__icon:after {
+    transform-origin: 0 50%;
+    width: 28.28427125px;
+}
+
+.burger__button.open .burger__button__icon:before {
+    transform: rotateZ(0.78539816rad);
+}
+
+.burger__button.open .burger__button__icon:after {
+    transform: rotateZ(-0.78539816rad);
+}
+
+.burger__menu {
+    list-style-type: none;
+    width: 100%;
+}
+
+.burger__menu li {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+
+.burger__menu a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 4vmax;
+    line-height: 8vmax;
+    font-weight: 600;
+    border-left: 3px solid transparent;
+    padding-left: 0;
+}
+
+.burger__menu li a{
+    background: rgb(255, 87, 34);
+}
+
+.burger__button.open + .burger__menu li {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#burgerOn{
+    display: none;
+}
+
+
+nav#burgerOn.burger{
+    z-index: 12;
+    width: 100vw;
+}
+
+a#burger-button.burger__button{
+    left: 81vw;
+    
+}
+/*****************************************************/
+/*****************************************************/
+
+
+
+/*
+/*  ============  SHADE 1  =============  */
+
+.shade1 {
+    /*  display: none;   */
+    position: absolute;
+    z-index: 2;
+    opacity: 0.1;
+    top: 50px;
+}
+
+
+/*  ============  LAPTOP &  TITLE COLUMN  & CODE LINK =============  */
+.lappyTitleWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    width: 100%;
+}
+
+
+.lapy{
+    position: absolute;
+    z-index: 3;
+    opacity: 1;
+}
+
+#lapytwister{
+    
+    transform:rotate(50deg);
+    position: relative;
+    top: 150px;
+    right: 5%;
+    z-index: 1;
+}
+
+.lapy img{
+    height: 450px;
+    width: 450px; 
+}
+
+
+/*  ============  TITLE COLUMN  =============  */
+
+
+h2 {
+    line-height: 1.3em;
+    font-size: 1.0em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+    padding: 0;
+    margin: 0px;
+}
+
+.titleCol { 
+    display: flex;
+    position: relative;
+    height: 450px;   /*  Adjust height of the example */
+    color: white;
+    right: -5%;
+}
+
+.col {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    line-height: 1.3em;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-top: 130px;
+    text-align: center;
+}
+
+
+.col h1{
+    z-index: 1;
+    text-align: center;
+     
+    line-height: 0.2em;
+    
+    text-transform: uppercase;
+    font-size: 1.8em;
+    letter-spacing: 0.5em;
+    font-weight: 300;
+    padding: 10;
+}
+
+
+.codeLink{
+    position: absolute;
+    top: 400px;
+    left: 65%;
+    z-index: 3;
+    width:100px;
+    height:100px;
+    background-image: url(../images/brackets.png);
+    position: absolute;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.3s ease-in-out;
+    box-shadow: -20px 27px 55px 0px rgba(0,0,0,0.75);
+}
+
+
+.codeLink:hover{
+    transform: scale(1.2);
+    background-position: center;
+    box-shadow: -64px 67px 85px 0px rgba(0,0,0,0.75);
+}
+
+
+/*  ============  ABOUT  =============  */
+
+.aboutWrapper{
+  
+    flex-direction: column;
+    height: auto;   /*  Adjust height of the example */
+    background-color: rgb(255,255,255);
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    
+     
+}
+
+.aboutCol { 
+    align-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;   /*  Adjust height of the example */
+    /*background: #138655; */
+    color: #111;
+    max-width: 100%;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    overflow: hidden;
+    
+}
+
+.ab-col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    line-height: 1.3em;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: justify;
+    /* background: #555;*/
+    max-width: 70%;  /* width od 'Abot' inside its box, so 100% means whole of its box*/
+}
+
+.ab-col span{
+    
+    z-index: 3;
+    padding-bottom: 50px;
+}
+
+.ab-col .about-title{
+    
+    line-height: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.3em;
+}
+
+span.about-title{
+    padding: 0px;
+    padding-top: 20px;
+    
+}
+
+/*  ============  SOCIAL BUTTONS  =============  */
+
+
+.socialBox {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-around;
+    z-index: 7;
+}
+
+
+#twitter_logo{
+    background-image: url(../images/twitterlogo.png);
+    
+    background-size: cover;
+} 
+
+#code_logo{
+    background-image: url(../images/brackets.png);
+    background-size: cover;
+}
+
+
+
+#github_logo{
+    background-image: url(../images/githublogo.png);
+    background-size: cover;
+}
+
+.logo{
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: -20px 27px 55px 0px rgba(0,0,0,0.75);
+    margin-bottom: 50px;
+}
+    
+.logo:hover{
+    transform: scale(1.2);
+    box-shadow: -64px 67px 85px 0px rgba(0,0,0,0.75);
+    background-position: center;
+}
+
+
+
+.logo a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #111;
+    justify-content: center;
+    
+}
+
+
+.logo>a>p{
+    
+    margin-top: 0;
+    position: relative;
+    top: 80px;
+}
+
+
+
+ /*  ============  < CODE > TITLE & TAGLINE  =========  */
+/*  =================================================  */
+
+/*  Media Query min 1000px ****  /
+
+/*  Two block statr side by side to become a colmn on wrap. 
+The first block conatins another flex block containing 
+the texts e.g. ' < CODE > 'This shanges on its parent block shrinking to<CODE>*/
+
+/* This is possibly three span's */
+
+
+
+
+/* code Wrapper  */
+
+.shade2{
+    position: absolute;
+    opacity: 0.1;
+    
+}
+
+
+
+.codeWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;   /*  Adjust height of the example */
+    background: rgb(255, 255, 255);
+ 
+    max-width: 100%;
+    padding: 100px;
+    z-index: 0;
+
+}
+
+
+
+.tagBox {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    line-height: 50px;
+    font-weight: 600;
+    padding: 0;
+    z-index: 1;
+}
+
+.codeTagBox { 
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+.tagBox:nth-child(1) {
+    flex-basis: auto;
+    font-size: 3em;   /* This setting for media query for less than 650px*/
+    font-weight: 500;
+    letter-spacing: 0.5em;
+    letter-spacing: 0.2em;    /* This setting for media query for less than 650px*/
+    text-align: left;
+    width: 100%;   /* Adjust to fit ' <CODE> ' in full width  */
+    z-index: 1;
+}
+
+
+
+.bracket {
+    color: rgb(255,179,0);
+    z-index: 1;
+}
+
+
+
+.tagBox:nth-child(2) {
+    flex-basis: 100px;  /* controls the height of the box */
+    flex-basis: auto; /* auto makes the box fit all the text exactly*/
+    line-height: 1.3em;
+    font-weight: 500;
+    font-size: 1.3em;
+    width: auto;
+    text-align: left;
+    z-index: 1;
+}
+
+
+
+
+
+
+/********  LINKS TO APPS (go to githublink)  *********/
+/*         once i make more project worthwhile i can update this                             */
+
+#appLink1{ 
+    background-image: url(../images/flappybird.png);
+    background-size: contain;
+    text-decoration: none;
+}
+
+
+#appLink2{ 
+    background-image: url(../images/roman.jpg); 
+    background-size: contain;
+    text-decoration: none;
+}
+
+
+#appLink3{ 
+    
+    background-image: url();
+    background-size: contain;
+}
+
+
+#appLink4{ 
+    background-image: url();
+    background-size: contain;
+}
+
+
+#appLink5{ 
+    background-image: url();
+
+    background-size: contain;
+}
+
+
+#appLink6{ 
+    background-image: url();
+    background-size: contain;
+}
+
+.codeExamplesBox {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    z-index: 4;
+}
+
+
+.appSize{
+    min-width: 150px;
+    min-height: 150px;
+    margin: 50px;
+    border: solid 10px rgb(255, 179, 0);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: -20px 27px 55px 0px rgba(0,0,0,0.75);
+}
+
+
+.appSize:hover{
+    transform: scale(1.4);
+    box-shadow: -64px 67px 85px 0px rgba(0,0,0,0.75);
+    pointer-events:stroke;
+}
+
+/*  ======================  FOOTER  ==================  */
+/*  ==================================================  */
+
+
+
+.footer{
+    background: white;
+    color: white;
+    z-index: 9;
+    
+}
+
+.footerBottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    text-align: center;
+    line-height: 50px;
+    font-weight: 600;
+    font-size: 0.9em;
+    height: 4em;
+    width: auto;
+    padding-top: 10px;
+    margin-right: 1em;
+}
+
+
+.footerLink .chevron{
+    opacity: 0.2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 4em;
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    transition: all 0.3s;
+    
+}
+
+
+.footerLink .chevron:hover{
+    transform: scale(1.3);
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 4em;
+    text-decoration: none;
+    margin: auto;
+    color: white;
+}
+
+
+
+/*====================== contact css =================================*/
+/*====================================================================*/
+/* ================== input boxes =============== */
+
+/*************   STYLE ADDITIONS   **********************
+*********************************************************/
+ 
+
+
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea,
+#contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: orangered;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+/* ======== submit button ====== */
+
+#contact button[type="submit"]:hover {
+  background: orange;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+
+
+/* ============================= photos html ==================== */
+
+html,body
+{
+    font-family:Verdana,sans-serif;
+    font-size:15px;line-height:1.5
+}
+html
+{
+    overflow-x:hidden
+}
+
+h2
+{
+    font-size:30px
+}
+
+.w3-serif
+{
+    font-family:serif
+}
+
+
+
+.w3-half
+{
+    float:left;
+    width:100%
+}
+
+
+.w3-half
+{
+    width:49.99999%
+}
+
+.con
+{
+    margin-left:auto;
+    margin-right:auto;
+    max-width:980px;
+}
+
+.pad
+{
+    padding-top:64px!important;
+    padding-bottom:64px!important
+}
